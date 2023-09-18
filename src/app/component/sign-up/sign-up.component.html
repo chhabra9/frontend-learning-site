@@ -1,0 +1,71 @@
+<div class="abc">
+  <h1>Registration Form</h1>
+  <form [formGroup]="signupForm" (ngSubmit) = "signupUser()">
+    <div class="example-form-fields">
+
+      <div class="name">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label> Last Name</mat-label>
+          <input matInput formControlName="lastName" />
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div formGroupName="address">
+    <h3>Address<span>(Optional)</span>:</h3>
+      <div class="example-form-fields">
+
+        <div class="name">
+          <mat-form-field>
+            <mat-label>street</mat-label>
+            <input matInput formControlName="street" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>city</mat-label>
+            <input matInput formControlName="city" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>state</mat-label>
+        <input matInput formControlName="state" />
+      </mat-form-field>
+    </div>
+  <button type = "submit" mat-raised-button color="primary" [disabled]="hasError()">Submit</button>
+  </form>
+</div>
