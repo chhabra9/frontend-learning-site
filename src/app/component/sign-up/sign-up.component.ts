@@ -22,11 +22,9 @@ export class SignUpComponent implements OnInit{
         lastName: ['',[Validators.required]],
         email: ['',[Validators.required, Validators.email]],
         password: ['',[Validators.required, Validators.pattern(this.passwordExp)]],
-        address: this.fb.group({
           street: [''],
           city: [''],
           state: ['']
-        })
       })
     }
     signupUser(){
