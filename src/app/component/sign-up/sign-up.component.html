@@ -1,7 +1,7 @@
 
 <div class="abc">
   <h1>Registration Form</h1>
-  <form [formGroup]="signupForm" (ngSubmit) = "signupUser()">
+  <form [formGroup]="signupForm">
     <div class="example-form-fields">
 
       <div class="name">
@@ -9,6 +9,9 @@
           <mat-label>First Name</mat-label>
           <input matInput formControlName="firstName" />
         </mat-form-field>
+        <mat-error class="no-bottom"
+        *ngIf="firstName?.errors?.['required'] &&(firstName?.touched||firstName?.dirty)"
+        >First Name is Required</mat-error>
       </div>
 
       <div>
@@ -16,6 +19,9 @@
           <mat-label> Last Name</mat-label>
           <input matInput formControlName="lastName" />
         </mat-form-field>
+        <mat-error class="no-bottom"
+        *ngIf="lastName?.errors?.['required'] &&(lastName?.touched||lastName?.dirty)"
+        >Last Name is Required</mat-error>
       </div>
 
     </div>
@@ -24,7 +30,11 @@
       <mat-label>Email</mat-label>
       <input matInput formControlName="email" />
     </mat-form-field>
-
+    <mat-error class="no-bottom"
+    *ngIf="email?.errors?.['required'] &&(email?.touched||email?.dirty)"
+    >Email is required</mat-error
+  >
+   <mat-error  class="no-bottom" *ngIf="email?.errors?.['email'] ">Enter a valid email</mat-error>
     <mat-form-field class="example-full-width">
       <mat-label>Enter your password</mat-label>
       <input
@@ -42,7 +52,12 @@
         <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
     </mat-form-field>
-
+    <mat-error class="no-bottom"
+    *ngIf="password?.errors?.['required'] &&(password?.touched||password?.dirty)"
+    >password is required</mat-error
+  >
+  <mat-error class="no-bottom" *ngIf="password?.errors?.['pattern'] "
+    >password not meet the requirement</mat-error>
     <div>
     <h3>Address<span>(Optional)</span>:</h3>
       <div class="example-form-fields">
@@ -67,6 +82,8 @@
         <input matInput formControlName="state" />
       </mat-form-field>
     </div>
-  <button type = "submit" mat-raised-button color="primary" [disabled]="hasError()">Submit</button>
+    <mat-error class="no-bottom" *ngIf="errorMessage">{{errorMessage}}</mat-error>
+<p>Already a User click <a  routerLink="/login">here</a></p>
+  <button type = "submit" mat-raised-button color="primary" [disabled]="hasError()" (click) ="signupUser()">Submit</button>
   </form>
 </div>
