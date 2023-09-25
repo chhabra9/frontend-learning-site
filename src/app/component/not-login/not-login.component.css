@@ -1,0 +1,13 @@
+.notLogin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.imgClass{
+  width: 40%;
+}
+a{
+text-decoration: none;
+
+}

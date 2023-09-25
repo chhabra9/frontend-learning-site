@@ -1,0 +1,10 @@
+.parent{
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.child {
+   flex-basis: 33.33333 %;
+    margin: 2%;
+  }

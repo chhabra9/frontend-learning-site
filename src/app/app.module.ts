@@ -12,8 +12,18 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './component/home/home.component';
 import { DefaultComponent } from './component/default/default.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { AllCourseComponent } from './component/all-course/all-course.component';
+import {MatCardModule} from '@angular/material/card';
+import { CourseComponent } from './component/single/course/course.component';
+import { MyCourseComponent } from './component/my-course/my-course.component';
+import { NotLoginComponent } from './component/not-login/not-login.component';
+import { environment } from '../../environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +31,11 @@ import { DefaultComponent } from './component/default/default.component';
     LoginComponent,
     HomeComponent,
     DefaultComponent,
+    NavbarComponent,
+    AllCourseComponent,
+    CourseComponent,
+    MyCourseComponent,
+    NotLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +48,11 @@ import { DefaultComponent } from './component/default/default.component';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

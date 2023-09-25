@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Explore</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="''">Home </a>
+      <a mat-list-item [routerLink]="'myCourse'">My Courses</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Learning Portal</span>
+      <span class ="flexExpand"></span>
+
+<div *ngIf = "isLogin" class = "signoutButton"  >
+      <button  mat-raised-button color="warn" (click) ="logoutUser()">Logout</button>
+<div class="cart-icon">
+
+  <mat-icon aria-hidden="false"  aria-label="Example home icon" fontIcon="shopping_cart" ></mat-icon>
+    <span  class="cart-count">1</span>
+</div>
+      </div>
+  <div *ngIf = "!isLogin">
+<a routerLink = "/login" class = "authButton">Login</a>/<a routerLink = "/signup" class = "authButton">Signup</a>
+  </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>  </mat-sidenav-content>
+</mat-sidenav-container>

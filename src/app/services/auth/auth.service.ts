@@ -7,7 +7,17 @@ import { User } from 'src/app/models/user.interface';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  private isUserLogin!:boolean;
+  constructor(private http: HttpClient) {
+     this.isUserLogin = !! localStorage.getItem('accessToken')
+  }
+  getUserLoginStatus(){
+    return this.isUserLogin;
+  }
+  setUserLoginStatus(status:boolean){
+      this.isUserLogin = status;
+  }
+
   signupUser(user:User){
       return this.http.post('http://localhost:3000/api/auth/register',user);
   }
