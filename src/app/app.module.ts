@@ -24,6 +24,7 @@ import { CourseComponent } from './component/single/course/course.component';
 import { MyCourseComponent } from './component/my-course/my-course.component';
 import { NotLoginComponent } from './component/not-login/not-login.component';
 import { environment } from '../../environment';
+import { CartComponent } from './component/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { environment } from '../../environment';
     AllCourseComponent,
     CourseComponent,
     MyCourseComponent,
-    NotLoginComponent
+    NotLoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

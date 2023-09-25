@@ -27,8 +27,8 @@
       <button  mat-raised-button color="warn" (click) ="logoutUser()">Logout</button>
 <div class="cart-icon">
 
-  <mat-icon aria-hidden="false"  aria-label="Example home icon" fontIcon="shopping_cart" ></mat-icon>
-    <span  class="cart-count">1</span>
+  <mat-icon aria-hidden="false" routerLink = "/cart" aria-label="Example home icon" fontIcon="shopping_cart"  class="abc"></mat-icon>
+    <span  class="cart-count">{{currentCartValue}}</span>
 </div>
       </div>
   <div *ngIf = "!isLogin">

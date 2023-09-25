@@ -4,5 +4,6 @@ export interface Course{
   thumbnail_url: string,
   description: string,
   instructor_id: string,
-  creation_date? :Date
+  creation_date? :Date,
+  price:number
 }

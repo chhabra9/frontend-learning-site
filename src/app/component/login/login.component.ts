@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit{
     this.hide = true;
     this.errorMessage = '';
       this.canGoBack = !!this.router.getCurrentNavigation()?.previousNavigation;
+      console.log(this.router.getCurrentNavigation()?.previousNavigation)
     }
 
   ngOnInit(): void {

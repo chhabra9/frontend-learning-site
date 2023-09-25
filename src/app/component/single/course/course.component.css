@@ -4,3 +4,12 @@
   align-items: center;
   border-radius: 2%;
 }
+.price {
+  margin-right: 3%;
+  background-color: red;
+}
+.card-action{
+
+  justify-content: space-between;
+  align-items: flex-start;
+}

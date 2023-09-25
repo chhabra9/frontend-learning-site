@@ -7,6 +7,7 @@ import { DefaultComponent } from './component/default/default.component';
 import { MyCourseComponent } from './component/my-course/my-course.component';
 import { AuthgaurdGuard } from './gaurds/authgaurd/authgaurd.guard';
 import { NotLoginComponent } from './component/not-login/not-login.component';
+import { CartComponent } from './component/cart/cart.component';
 
 const routes: Routes = [
   {component:SignUpComponent,path:'signup'},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {component:HomeComponent, path: ''},
   {component: MyCourseComponent,path:'myCourse', canActivate:[AuthgaurdGuard]},
   {component:NotLoginComponent,path:'notLogin'},
+  {component:CartComponent,path:'cart',canActivate:[AuthgaurdGuard]},
   {component:DefaultComponent,path:'**'},
-
 ];
 
 @NgModule({

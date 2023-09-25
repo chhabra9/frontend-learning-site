@@ -1,0 +1,56 @@
+
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.course-details {
+
+  flex: 1;
+  margin: 1%;
+}
+
+.cart-item {
+  margin-bottom: 20px;
+}
+
+.order-summary {
+  margin: 5%;
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+.flexExpand {
+  flex: 1 1 auto;
+}
+mat-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+mat-card-title {
+  font-size: 1.25rem;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-content {
+  padding: 10px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button {
+  margin-left: 10px;
+}
+

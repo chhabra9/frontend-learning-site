@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/models/course.interface';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-course',
@@ -10,13 +11,16 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class CourseComponent {
   @Input()course!:Course;
-  constructor( private authService:AuthService, private router:Router){
+  @Input() isMyCourse!:boolean;
+  constructor( private authService:AuthService, private router:Router,private cartService: CartService){
     console.log(this.course);
   }
   subscribe(){
     const isLogin = this.authService.getUserLoginStatus();
     if(!isLogin){
       this.router.navigate(['/login']);
+    }else{
+      this.cartService.addToCart(this.course);
     }
   }
 }
