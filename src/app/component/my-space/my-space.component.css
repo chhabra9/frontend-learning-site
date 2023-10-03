@@ -1,0 +1,23 @@
+.course{
+  background-color: #fff;
+  width: 95%;
+  min-height: 10%;
+  display: flex;
+  margin: 3%;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 2%;
+}
+.myCourses{
+  margin: 2%;
+}
+.parent{
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.child {
+  flex-basis: 33.33333 %;
+   margin: 2%;
+ }

@@ -22,8 +22,8 @@
   <div class="order-summary">
     <h2>Order Summary</h2>
     <p>Subtotal: ₹{{ calculateSubtotal() }}</p>
-    <p>Tax (10%): ₹{{ calculateTax() }}</p>
+    <p>GST (18%): ₹{{ calculateTax() }}</p>
     <p>Total: ₹{{ calculateTotal() }}</p>
-    <button mat-raised-button color="primary">Place Order</button>
+    <button mat-raised-button color="primary" (click) = "checkout()">Place Order</button>
   </div>
 </div>

@@ -10,10 +10,10 @@ import { CartService } from 'src/app/services/cart/cart.service';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent {
-  @Input()course!:Course;
-  @Input() isMyCourse!:boolean;
+  @Input()course!:Course ;
+  @Input() isMyCourse:boolean =false;
+  @Input() isInstructor:boolean =false;
   constructor( private authService:AuthService, private router:Router,private cartService: CartService){
-    console.log(this.course);
   }
   subscribe(){
     const isLogin = this.authService.getUserLoginStatus();
@@ -22,5 +22,8 @@ export class CourseComponent {
     }else{
       this.cartService.addToCart(this.course);
     }
+  }
+  manageCourse(){
+    this.router.navigate(['/manageModules'])
   }
 }

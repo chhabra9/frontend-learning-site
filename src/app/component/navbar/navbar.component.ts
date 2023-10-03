@@ -11,6 +11,8 @@ import { CartService } from 'src/app/services/cart/cart.service';
 export class NavbarComponent implements OnInit, AfterContentChecked{
   isLogin!:boolean;
   currentCartValue!:number;
+  isInstructor!:boolean;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
@@ -23,18 +25,19 @@ export class NavbarComponent implements OnInit, AfterContentChecked{
     map(result => result.matches)
   );
   ngOnInit(): void {
+
     this.isLogin = this.authService.getUserLoginStatus();
-    console.log(this.isLogin);
   }
 
   ngAfterContentChecked(): void {
-    console.log(this.authService.getUserLoginStatus());
+    this.isInstructor = localStorage.getItem('instructorId') ==="undefined"?false:true
     this.currentCartValue = this.cartService.getAllCartElements().length
     this.isLogin = this.authService.getUserLoginStatus()
 }
   logoutUser(){
-    console.log('working')
     localStorage.removeItem('accessToken');
+    localStorage.removeItem('email');
+    localStorage.removeItem('isInstructor');
     this.authService.setUserLoginStatus(false);
     this.isLogin = false;
   }

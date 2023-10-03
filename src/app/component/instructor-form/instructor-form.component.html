@@ -1,0 +1,32 @@
+
+
+<div class="abc">
+  <h1>Login Form</h1>
+  <form [formGroup]="instructorForm" >
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Qualification</mat-label>
+      <input matInput formControlName="qualification" />
+    </mat-form-field>
+
+    <mat-error class="no-bottom"
+    *ngIf="qualification?.errors?.['required'] &&(qualification?.touched||qualification?.dirty)"
+    >Email is required</mat-error
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Certifications</mat-label>
+      <input matInput formControlName="certifications"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Experience</mat-label>
+      <input matInput formControlName="experience"
+      type ="number"
+      />
+    </mat-form-field>
+    <mat-error class="no-bottom" *ngIf="errorMessage">{{errorMessage}}</mat-error>
+  <button  mat-raised-button color="primary" [disabled]="hasError()" (click) = "makeInstructor()" >Submit</button>
+  </form>
+</div>
+

@@ -7,13 +7,17 @@
   <mat-card-title>{{course.title}}</mat-card-title>
   <mat-card-subtitle>{{course.description.slice(0,50)}}....</mat-card-subtitle>
   </mat-card-content>
-  <mat-card-actions class="card-action" *ngIf = "!isMyCourse">
+  <mat-card-actions class="card-action" *ngIf = "!isMyCourse && !isInstructor">
     <h2 clas="price">₹ {{course.price}}</h2>
     <button  mat-raised-button color="primary" (click) = "subscribe()"> Add to Cart</button>
     <mat-error></mat-error>
   </mat-card-actions>
   <mat-card-actions class="card-action" *ngIf = "isMyCourse">
     <button  mat-raised-button color="primary"> Continue Learning</button>
+    <mat-error></mat-error>
+  </mat-card-actions>
+  <mat-card-actions class="card-action" *ngIf = "isInstructor">
+    <button  mat-raised-button color="primary" (click) ="manageCourse()"> Manage Course</button>
     <mat-error></mat-error>
   </mat-card-actions>
 </mat-card>

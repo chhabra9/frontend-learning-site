@@ -1,0 +1,64 @@
+<div>
+<div class = " special general">
+<mat-form-field class="example-full-width">
+      <mat-label>title</mat-label>
+      <input matInput />
+    </mat-form-field>
+<mat-form-field class="example-full-width">
+      <mat-label>Price</mat-label>
+      <input matInput  type ="text"
+        height="auto"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="example-full-width">
+  <textarea matInput placeholder="Description"  name="description" rows="1"></textarea>
+</mat-form-field>
+  <button  mat-raised-button color="primary" >Submit</button>
+</div>
+<div>
+</div>
+<div class = "general">
+  <button mat-fab color="basic" (click)="showTools()" class ="showButton">
+  <mat-icon>menu</mat-icon>
+  </button>
+  <h2 class ="modulesHeading">All Modules</h2>
+  <div *ngIf = "show">
+  <div class = "toolIcon">
+  <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click) = "addModule">
+          <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class = "toolIcon">
+  <button mat-fab color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon>sort</mat-icon>
+    </button>
+    </div>
+    </div>
+  <div class="modules">
+    <div class ="module">
+    </div>
+    <div class ="module">
+    <h1>Hello</h1>
+    <p *ngIf ="true">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua. Viverra mauris in aliquam sem. Iaculis urna id volutpat lacus
+     laoreet non curabitur gravida. Nisl nunc mi ipsum faucibus vitae aliquet nec. Laoreet suspendisse
+     interdum consectetur libero id. Amet facilisis magna etiam tempor orci. Tincidunt nunc pulvinar sapien
+      et ligula ullamcorper. Et ultrices neque ornare aenean euismod elementum. Ullamcorper morbi tincidunt
+       ornare massa eget. Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat.
+        Lectus mauris ultrices eros in. Feugiat nisl pretium fusce id. Semper feugiat nibh sed pulvinar
+         proin. Pulvinar proin gravida hendrerit lectus. A condimentum vitae sapien pellentesque. Ut
+         porttitor leo a diam sollicitudin tempor id. Ultricies lacus sed turpis tincidunt id aliquet risus.
+          Praesent tristique magna sit amet purus gravida. Nulla aliquet enim tortor at auctor. Turpis in eu mi bibendum neque.
+    </p>
+    </div>
+    <div class ="module">
+    <h1>Hello</h1>
+    </div>
+    <div class ="module">
+    <h1>Hello</h1>
+    </div>
+
+  </div>
+  </div>
+</div>

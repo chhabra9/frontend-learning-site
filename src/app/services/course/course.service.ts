@@ -15,12 +15,22 @@ export class CourseService {
   }
   getAllUserCourse(): Observable<Course[]>{
     const authToken = localStorage.getItem('accessToken');
-    const email = localStorage.getItem('email');
+    const userId = localStorage.getItem('userId');
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + authToken
       })
     };
-    return this.http.get<Course[]>(`http://localhost:3000/api/userCourse?email=${email}`,httpOptions);
+    return this.http.get<Course[]>(`http://localhost:3000/api/userCourse/${userId}`,httpOptions);
+  }
+  getAllInstructorCourse():Observable<Course[]>{
+    const authToken = localStorage.getItem('accessToken');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + authToken
+      })
+    };
+    const instructorId = localStorage.getItem("instructorId");
+   return this.http.get<Course[]>(`http://localhost:3000/api/course/instructor/${instructorId}`,httpOptions)
   }
 }

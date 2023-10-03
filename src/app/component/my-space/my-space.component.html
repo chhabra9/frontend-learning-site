@@ -1,0 +1,9 @@
+<div class = "course">
+<h1>Create an Engaging Course</h1>
+<button mat-raised-button color="primary">Create Course</button>
+</div>
+<div class ="myCourses ">
+<h1>Your Courses</h1>
+<div *ngFor = "let course of instructorCourse" class ="child">
+  <app-course  [course] ="course" [isInstructor] = "true"></app-course>
+</div>

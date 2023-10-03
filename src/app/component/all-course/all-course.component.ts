@@ -15,10 +15,8 @@ export class AllCourseComponent implements OnInit {
     this.courseService.getAllCourse().subscribe({
       next: (val:Course[] )=>{
         this.courses = val;
-        console.log(val);
       },
       error:(err)=>{
-        console.log(err);
       }
     })
   }

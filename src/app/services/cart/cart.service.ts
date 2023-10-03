@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Course } from 'src/app/models/course.interface';
 
@@ -5,10 +6,13 @@ import { Course } from 'src/app/models/course.interface';
   providedIn: 'root'
 })
 export class CartService {
+  getAllCartElementsA(): Course[] {
+    throw new Error('Method not implemented.');
+  }
   private readonly localStorageKey = 'cartItems';
   cartItems: Course[] = [];
 
-  constructor() {
+  constructor(private http:HttpClient) {
     const storedItems = localStorage.getItem(this.localStorageKey);
     if (storedItems) {
       this.cartItems = JSON.parse(storedItems);
@@ -18,16 +22,24 @@ export class CartService {
   private updateLocalStorage() {
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
   }
-
+  setCart(value:Course[]){
+    this.cartItems = value;
+    this.updateLocalStorage();
+  }
   getAllCartElements() {
-    console.log("in service", this.cartItems);
     return this.cartItems;
   }
 
   addToCart(course: Course) {
-    console.log("here");
+    const isDuplicate = this.cartItems.some((item)=>{
+      return item.course_id === course.course_id;
+    })
+  if(isDuplicate){
+    alert('alredy in cart');
+  }else{
     this.cartItems.push(course);
     this.updateLocalStorage();
+  }
   }
 
   emptyCart() {
@@ -41,15 +53,37 @@ export class CartService {
       this.cartItems.splice(indexToRemove, 1);
       this.updateLocalStorage();
     } else {
-      console.log(`Course with ID ${courseId} not found in the cart.`);
     }
   }
-
+  updateCart(){
+      let coursIds = this.cartItems.map(item=>item.course_id);
+      this.updateCartOnServer(coursIds).subscribe();
+  }
+    updateCartOnServer(courseIds:number[]){
+      const authToken = localStorage.getItem('accessToken');
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Authorization': 'Bearer ' + authToken
+        })
+      };
+      const userId = localStorage.getItem('userId')
+     return this.http.put<Course[]>(`http://localhost:3000/api/cart/${userId}`,{courseIds:courseIds},httpOptions)
+    }
   totalCostOfCart() {
     let totalCost = 0;
     this.cartItems.forEach((course) => {
       totalCost += course?.price || 0;
     });
     return totalCost;
+  }
+  getAllCartsElementA(){
+    const authToken = localStorage.getItem('accessToken');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + authToken
+      })
+    };
+    const userId = localStorage.getItem('userId');
+   return this.http.get<Course[]>(`http://localhost:3000/api/cart/${userId}`,httpOptions)
   }
 }

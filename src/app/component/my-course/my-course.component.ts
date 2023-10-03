@@ -15,10 +15,8 @@ export class MyCourseComponent {
     this.courseService.getAllUserCourse().subscribe({
       next: (val:Course[] )=>{
         this.courses = val;
-        console.log(val);
       },
       error:(err)=>{
-        console.log(err);
       }
     })
   }

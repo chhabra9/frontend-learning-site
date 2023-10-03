@@ -25,6 +25,11 @@ import { MyCourseComponent } from './component/my-course/my-course.component';
 import { NotLoginComponent } from './component/not-login/not-login.component';
 import { environment } from '../../environment';
 import { CartComponent } from './component/cart/cart.component';
+import { InstructorFormComponent } from './component/instructor-form/instructor-form.component';
+import { MySpaceComponent } from './component/my-space/my-space.component';
+import { ManageModulesComponent } from './component/manage-modules/manage-modules.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +42,10 @@ import { CartComponent } from './component/cart/cart.component';
     CourseComponent,
     MyCourseComponent,
     NotLoginComponent,
-    CartComponent
+    CartComponent,
+    InstructorFormComponent,
+    MySpaceComponent,
+    ManageModulesComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,7 @@ import { CartComponent } from './component/cart/cart.component';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    CdkAccordionModule,
     MatCardModule
   ],
   providers: [],

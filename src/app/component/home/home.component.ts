@@ -14,7 +14,6 @@ constructor(private user:UserService){}
     this.errorMessage = '';
     this.user.getAllUser().subscribe({
       next:(result)=>{
-        console.log(result);
       },
       error:(err)=>{
           this.errorMessage = err.error;
