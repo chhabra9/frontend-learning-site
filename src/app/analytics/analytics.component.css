@@ -1,0 +1,22 @@
+
+.comp{
+  margin: 2%;
+  display: flex;
+  flex-wrap:wrap ;
+  justify-content:space-around ;
+}
+.subComp{
+  flex-basis: 40%;
+  /* width: 45%; */
+  height:20rem;
+  margin: 2%;
+  background-color: #fff;
+  border-radius: 2%;
+}
+.mainComp{
+  min-height: 20rem;;
+  border-radius: 2%;
+  margin: 2%;
+  width: 95%;
+}
+

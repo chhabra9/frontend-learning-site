@@ -31,6 +31,7 @@ export class CourseService {
       })
     };
     const instructorId = localStorage.getItem("instructorId");
+    console.log(instructorId);
    return this.http.get<Course[]>(`http://localhost:3000/api/course/instructor/${instructorId}`,httpOptions)
   }
 }

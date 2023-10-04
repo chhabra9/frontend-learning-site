@@ -35,6 +35,7 @@ ngOnDestroy(): void {
     return this.calculateSubtotal() + this.calculateTax();
   }
   checkout(){
+    // console.log(this.cartItems);
     this.paymentService.getCheckoutSession(this.cartItems).subscribe({
       next:(val:any)=>{
         window.open(val.url,"_self");

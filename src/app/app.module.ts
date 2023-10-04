@@ -23,13 +23,16 @@ import {MatCardModule} from '@angular/material/card';
 import { CourseComponent } from './component/single/course/course.component';
 import { MyCourseComponent } from './component/my-course/my-course.component';
 import { NotLoginComponent } from './component/not-login/not-login.component';
-import { environment } from '../../environment';
 import { CartComponent } from './component/cart/cart.component';
+import {MatTableModule} from '@angular/material/table';
 import { InstructorFormComponent } from './component/instructor-form/instructor-form.component';
 import { MySpaceComponent } from './component/my-space/my-space.component';
 import { ManageModulesComponent } from './component/manage-modules/manage-modules.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
-
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { LineChartComponent } from './component/single/lineChart/line-chart/line-chart.component';
+import { PieChartComponent } from './component/single/pieChart/pie-chart/pie-chart.component';
+import { TableComponent } from './component/single/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,11 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     CartComponent,
     InstructorFormComponent,
     MySpaceComponent,
-    ManageModulesComponent
+    ManageModulesComponent,
+    AnalyticsComponent,
+    LineChartComponent,
+    PieChartComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MatListModule,
     MatToolbarModule,
     CdkAccordionModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

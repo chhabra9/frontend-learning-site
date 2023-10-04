@@ -4,6 +4,8 @@
 </div>
 <div class ="myCourses ">
 <h1>Your Courses</h1>
+<div class ="parent">
 <div *ngFor = "let course of instructorCourse" class ="child">
   <app-course  [course] ="course" [isInstructor] = "true"></app-course>
+  </div>
 </div>

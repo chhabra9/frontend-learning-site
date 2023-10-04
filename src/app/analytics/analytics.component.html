@@ -1,0 +1,24 @@
+<div class = "comp">
+<div class ="subComp">
+<h1>Sales By Month</h1>
+<div class="chart-container">
+<div *ngIf = "salesPerMonth$ |async as data">
+      <app-line-chart [data] = "data"></app-line-chart>
+      </div>
+</div>
+</div>
+<div class ="subComp">
+<h1>Sales By Course</h1>
+<div *ngIf = "salesByCourse$ |async as salesByCourse">
+
+<app-pie-chart  [data] = 'salesByCourse'></app-pie-chart>
+</div>
+  </div>
+
+<div class ="mainComp">
+<h1>Students</h1>
+<div *ngIf = ' allStudent$ | async as allStudent'>
+<app-table [studentInfo] = "allStudent"></app-table>
+</div>
+</div>
+</div>

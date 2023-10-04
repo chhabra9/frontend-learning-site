@@ -57,7 +57,12 @@ export class CartService {
   }
   updateCart(){
       let coursIds = this.cartItems.map(item=>item.course_id);
-      this.updateCartOnServer(coursIds).subscribe();
+      console.log(coursIds);
+      this.updateCartOnServer(coursIds).subscribe({
+        error:(err)=>{
+          console.log(err.message);
+        }
+      });
   }
     updateCartOnServer(courseIds:number[]){
       const authToken = localStorage.getItem('accessToken');

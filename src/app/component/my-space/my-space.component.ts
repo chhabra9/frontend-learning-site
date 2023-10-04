@@ -19,6 +19,7 @@ ngOnInit(): void {
       this.instructorCourse = course;
     },
     error:(err)=>{
+        console.log('mspace',err.error)
     }
   })
 }

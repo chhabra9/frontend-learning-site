@@ -11,6 +11,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { InstructorFormComponent } from './component/instructor-form/instructor-form.component';
 import { MySpaceComponent } from './component/my-space/my-space.component';
 import { ManageModulesComponent } from './component/manage-modules/manage-modules.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 const routes: Routes = [
   {component:SignUpComponent,path:'signup'},
@@ -20,8 +21,9 @@ const routes: Routes = [
   {component:NotLoginComponent,path:'notLogin'},
   {component:CartComponent,path:'cart',canActivate:[AuthgaurdGuard]},
   {component:InstructorFormComponent,path:'instructorForm',canActivate:[AuthgaurdGuard]},
-  {component:MySpaceComponent,path:'mySpace'},
-  {component:ManageModulesComponent,path:'manageModules'},
+  {component:MySpaceComponent,path:'mySpace',canActivate:[AuthgaurdGuard]},
+  {component:ManageModulesComponent,path:'manageModules',canActivate:[AuthgaurdGuard]},
+  {component:AnalyticsComponent,path:'analytics',canActivate:[AuthgaurdGuard]},
   {component:DefaultComponent,path:'**'},
 ];
 

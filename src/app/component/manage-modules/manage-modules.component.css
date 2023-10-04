@@ -23,6 +23,8 @@
   flex-direction: column;
 }
 .toolIcon{
+  left: 1px;
+  top:4px;
   margin: 1%;
   /* display: inline; */
 }
@@ -39,6 +41,7 @@
   display: inline-block;
 }
 .showButton{
+  position: relative;
   margin-right: 1%;
 }
 
